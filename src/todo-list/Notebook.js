@@ -26,11 +26,8 @@ class Notebook extends React.Component {
         return (
             <div className='notebook'>
                 <div className='notebook-header'>
-                    <div>
-                        Tasks
-                        <button onClick={() => this.add_task_list()}>+</button>
-                    </div>
-                    <input type="text"/>
+                    <h2 style={{margin: '0'}}>Todo - List</h2>
+                    <button onClick={() => this.add_task_list()} style={{margin: '0', height: '2rem', width: '2rem', borderRadius: '50%', backgroundColor: 'gray'}}><h3 style={{margin: '0 auto'}}>+</h3></button>
                 </div>
                 <ol className='notebook-body'>
                     {this.state.task_lists}

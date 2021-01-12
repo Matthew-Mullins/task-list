@@ -1,7 +1,8 @@
 .task_list {
-    border: 1px solid gray;
+    border: 2px solid rgb(66, 66, 66);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 2rem;
     grid-template-areas: 
         'title title title title date date status status' 
         'bar bar bar bar bar bar percent expand' 
@@ -10,51 +11,53 @@
 
 #title {
     grid-area: title;
-    margin: 2px;
+    margin: 6px;
+    align-self: center;
     text-align: left;
 }
 
 #date {
     grid-area: date;
+    margin: 6px;
     align-self: center;
-    margin: 2px;
     text-align: right;
 }
 
 #status {
     grid-area: status;
+    margin: 6px;
     align-self: center;
-    margin: 2px;
-    padding-right: 10px;
     text-align: right;
 }
 
 #progress {
     grid-area: bar;
-    margin: 2px;
+    margin: 6px;
     border: 1px solid darkgreen;
     border-radius: 5px;
 }
 
 #progress-value {
-    background: green;
+    border-radius: 5px;
+    background: linear-gradient(148deg, rgba(0,111,5,1) 0%, rgba(0,207,0,1) 100%);
 }
 
 #percent {
     grid-area: percent;
+    margin: 6px;
     align-self: center;
     text-align: left;
-    margin: 2px;
 }
 
 #expand {
     grid-area: expand;
+    margin: 6px;
     align-self: center;
-    margin: 2px;
+    background-image: linear-gradient(148deg, rgba(82,82,82,1) 0%, rgba(42,42,42,1) 100%);
 }
 
 #tasks {
     grid-area: tasks;
-    margin: 2px;
-    font-size: 24px;
+    margin: 6px;
+    align-self: center;
 }

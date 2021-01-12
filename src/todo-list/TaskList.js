@@ -64,18 +64,18 @@ class TaskList extends React.Component {
     render() {
         return (
             <div className='task_list'>
-                <div id='title'>{this.state.title}</div>
-                <div id='date'>{this.state.date}</div>
-                <div id='status'>{this.state.status}</div>
+                <h4 id='title'>{this.state.title}</h4>
+                <h4 id='date'>{this.state.date}</h4>
+                <h4 id='status'>{this.state.status}</h4>
                 <div id='progress'>
                     <div id='progress-value' style={{height:'100%', width:this.state.percent + '%'}}></div>
                 </div>
-                <div id='percent'>{this.state.percent + '%'}</div>
-                <button id='expand' onClick={() => this.expand()}>V</button>
+                <h4 id='percent'>{this.state.percent + '%'}</h4>
+                <button id='expand' onClick={() => this.expand()}><h6 style={{margin: '0 auto'}}>Show</h6></button>
                 <div id='tasks' style={this.state.show_tasks ? {display: 'initial'} : {display: 'none'}}>
-                    <div>
-                        Header
-                        <button onClick={() => this.add_task()}>+</button>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <h4 style={{margin: '6px'}}>Header</h4>
+                        <button style={{borderRadius: '50%', margin: '6px', backgroundColor: 'gray'}} onClick={() => this.add_task()}><h3 style={{margin: '0 auto'}}>+</h3></button>
                     </div>
                     <div>
                         {this.state.tasks}

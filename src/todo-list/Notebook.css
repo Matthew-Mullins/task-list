@@ -1,16 +1,21 @@
 .notebook {
     width: 800px;
-    border: 4px solid black;
-    border-radius: 5px;
     margin: 0 auto;
+    border: 2px solid rgba(82,82,82,1);
+    background: rgb(82,82,82);
+    background: linear-gradient(148deg, rgba(82,82,82,1) 0%, rgba(42,42,42,1) 100%) no-repeat;
 }
 
 .notebook-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    height: 2rem;
+    padding: 1rem;
+    margin: 10px;
+    height: 1.5rem;
+    border: 2px solid rgb(66, 66, 66);
+    background: rgb(82,82,82);
+    background: linear-gradient(148deg, rgba(82,82,82,1) 0%, rgba(42,42,42,1) 100%) no-repeat;
 }
 
 .notebook-body {

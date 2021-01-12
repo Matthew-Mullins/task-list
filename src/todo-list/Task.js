@@ -22,17 +22,13 @@ class Task extends React.Component {
     render() {
         return (
             <div className='task'>
-                <div>
-                    {this.state.title}
-                </div>
-                <button onClick={() => this.complete()}>
-                    Complete
+                <h5 style={{margin: '6px', alignSelf: 'center'}}>{this.state.title}</h5>
+                <button style={{margin: '6px', alignSelf: 'center', backgroundImage: 'linear-gradient(148deg, rgba(82,82,82,1) 0%, rgba(42,42,42,1) 100%)'}} onClick={() => this.complete()}>
+                    <h5 style={{margin: '6px'}}>Complete</h5>
                 </button>
-                <div>
-                    {this.state.completed.toString()}
-                </div>
-                <button onClick={(i, j) => this.props.onDeleted(this, this.state.completed)}>
-                    Delete
+                <h5 style={{margin: '6px', alignSelf: 'center'}}>{this.state.completed.toString()}</h5>
+                <button style={{margin: '6px', backgroundImage: 'linear-gradient(148deg, rgba(82,82,82,1) 0%, rgba(42,42,42,1) 100%)'}} onClick={(i, j) => this.props.onDeleted(this, this.state.completed)}>
+                    <h5 style={{margin: '6px', alignSelf: 'center'}}>Delete</h5>
                 </button>
             </div>
         )
