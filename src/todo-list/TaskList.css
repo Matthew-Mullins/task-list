@@ -1,0 +1,60 @@
+.task_list {
+    border: 1px solid gray;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: 
+        'title title title title date date status status' 
+        'bar bar bar bar bar bar percent expand' 
+        'tasks tasks tasks tasks tasks tasks tasks tasks';
+}
+
+#title {
+    grid-area: title;
+    margin: 2px;
+    text-align: left;
+}
+
+#date {
+    grid-area: date;
+    align-self: center;
+    margin: 2px;
+    text-align: right;
+}
+
+#status {
+    grid-area: status;
+    align-self: center;
+    margin: 2px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+#progress {
+    grid-area: bar;
+    margin: 2px;
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+}
+
+#progress-value {
+    background: green;
+}
+
+#percent {
+    grid-area: percent;
+    align-self: center;
+    text-align: left;
+    margin: 2px;
+}
+
+#expand {
+    grid-area: expand;
+    align-self: center;
+    margin: 2px;
+}
+
+#tasks {
+    grid-area: tasks;
+    margin: 2px;
+    font-size: 24px;
+}

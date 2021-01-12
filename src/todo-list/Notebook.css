@@ -1,0 +1,20 @@
+.notebook {
+    width: 800px;
+    border: 4px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.notebook-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height: 2rem;
+}
+
+.notebook-body {
+    list-style: none;
+    padding: 0;
+    margin: 10px;
+}
