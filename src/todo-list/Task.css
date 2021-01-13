@@ -6,3 +6,11 @@
     justify-content: space-between;
     align-content: space-between;
 }
+
+.title {
+    grid-area: title;
+    border: 0;
+    margin: 6px;
+    align-self: center;
+    text-align: left;
+}

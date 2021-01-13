@@ -20,7 +20,7 @@ class TaskList extends React.Component {
     }
 
     add_task() {
-        var task = <Task key={this.state.tasks_created} title={'Task ' + this.state.tasks_created} onCompleted={(i) => this.complete_task(i)} onDeleted={(i, j) => this.delete_task(i, j)}/>
+        var task = <Task key={this.state.tasks_created} taskId={this.state.tasks_created} title={'Task ' + this.state.tasks_created} onCompleted={(i) => this.complete_task(i)} onDeleted={(i, j) => this.delete_task(i, j)}/>
         let current_tasks = this.state.tasks
         current_tasks.push(task)
         let new_tasks_created = this.state.tasks_created + 1
@@ -35,14 +35,26 @@ class TaskList extends React.Component {
         })
     }
 
-    delete_task(task) {
+    delete_task(task_id, completed) {
+        console.log(task_id)
         let current_tasks = this.state.tasks
-        for (let i = 0; i < this.current_number_tasks; i++) {
-            if (task === current_tasks[i]) {
-                console.log(i)
+        let new_number_tasks_completed = this.state.number_tasks_completed
+        for (let i = 0; i < this.state.current_number_tasks; i++) {
+            if (task_id === current_tasks[i].props.taskId) {
+                if (completed) {
+                    new_number_tasks_completed = this.state.number_tasks_completed - 1
+                }
+                current_tasks.splice(i, 1)
+                break
             }
         }
-        console.log(task.state.completed)
+        let new_current_number_tasks = current_tasks.length
+        this.setState({
+            current_number_tasks: new_current_number_tasks,
+            number_tasks_completed: new_number_tasks_completed,
+            percent: Math.ceil((new_number_tasks_completed / new_current_number_tasks) * 100),
+            tasks: current_tasks
+        })
     }
 
     complete_task(task_completed) {
@@ -64,9 +76,9 @@ class TaskList extends React.Component {
     render() {
         return (
             <div className='task_list'>
-                <h4 id='title'>{this.state.title}</h4>
+                <input id='title' type='text' maxLength='30' placeholder={this.state.title}/>
                 <h4 id='date'>{this.state.date}</h4>
-                <h4 id='status'>{this.state.status}</h4>
+                <h4 id='status'>Status: {this.state.status}</h4>
                 <div id='progress'>
                     <div id='progress-value' style={{height:'100%', width:this.state.percent + '%'}}></div>
                 </div>
