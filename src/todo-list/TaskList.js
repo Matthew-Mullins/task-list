@@ -52,7 +52,7 @@ class TaskList extends React.Component {
         this.setState({
             current_number_tasks: new_current_number_tasks,
             number_tasks_completed: new_number_tasks_completed,
-            percent: Math.ceil((new_number_tasks_completed / new_current_number_tasks) * 100),
+            percent: new_current_number_tasks !== 0 ? Math.ceil((new_number_tasks_completed / new_current_number_tasks) * 100) : 100,
             tasks: current_tasks
         })
     }
@@ -83,7 +83,7 @@ class TaskList extends React.Component {
                     <div id='progress-value' style={{height:'100%', width:this.state.percent + '%'}}></div>
                 </div>
                 <h4 id='percent'>{this.state.percent + '%'}</h4>
-                <button id='expand' onClick={() => this.expand()}><h6 style={{margin: '0 auto'}}>Show</h6></button>
+                <button id='expand' onClick={() => this.expand()}><h6 style={{margin: '0 auto'}}>Expand</h6></button>
                 <div id='tasks' style={this.state.show_tasks ? {display: 'initial'} : {display: 'none'}}>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                         <h4 style={{margin: '6px'}}>Header</h4>

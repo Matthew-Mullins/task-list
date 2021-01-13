@@ -1,10 +1,11 @@
 .task_list {
-    border: 2px solid rgb(66, 66, 66);
+    background: rgb(60, 60, 60);
+    margin: .5rem 0;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: 2rem;
+    grid-template-rows: 3rem;
     grid-template-areas: 
-        'title title title title date date status status' 
+        'title title title date date date status status' 
         'bar bar bar bar bar bar percent expand' 
         'tasks tasks tasks tasks tasks tasks tasks tasks';
 }
@@ -27,8 +28,10 @@
 #status {
     grid-area: status;
     margin: 6px;
+    border: 1px solid white;
+    border-radius: 5px;
     align-self: center;
-    text-align: right;
+    text-align: center;
 }
 
 #progress {
